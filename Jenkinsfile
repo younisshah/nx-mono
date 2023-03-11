@@ -1,6 +1,8 @@
 pipeline {
     agent any
 
+    tools {nodejs "nodejs"}
+
     stages {
 
         stage("build") {
@@ -12,6 +14,7 @@ pipeline {
         stage("test") {
             steps {
                 echo "testing the application"
+                sh "node --version"
             }
         }
 
