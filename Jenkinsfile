@@ -17,11 +17,5 @@ pipeline {
                 sh "node --version"
             }
         }
-
-        stage("deploy") {
-            steps {
-                echo "deploying the application"
-            }
-        }
     }
 }
