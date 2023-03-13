@@ -1,4 +1,4 @@
 export const double = (num: number) => {
-    console.debug(`Doubling=${num}`);
+    console.log(`Doubling=${num}`);
     return num * 2;
 };
