@@ -1,20 +1,11 @@
 pipeline {
-    agent any
-
-    tools {nodejs "nodejs"}
-
+    agent {
+        docker { image 'node:16.13.1-alpine' }
+    }
     stages {
-
-        stage("prepare") {
+        stage('Test') {
             steps {
-                sh "npm install"
-            }
-        }
-
-        stage("build") {
-            steps {
-                echo "building the application..."
-                sh "npx nx affected --target=build --base=origin/develop~1"
+                sh 'node --version'
             }
         }
     }
