@@ -22,7 +22,7 @@ pipeline {
         stage("build") {
             steps {
                 echo "building the application..."
-                sh "npx nx affected --target=build --base=origin/develop~1"
+                sh "npx nx affected --target=build --base=HEAD~1 --parallel"
             }
         }
     }
