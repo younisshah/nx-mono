@@ -5,16 +5,16 @@ pipeline {
 
     stages {
 
-        stage("build") {
+        stage("prepare") {
             steps {
-                echo "building the application"
+                sh "npm install"
             }
         }
 
-        stage("test") {
+        stage("build") {
             steps {
-                echo "testing the application"
-                sh "node --version"
+                echo "building the application..."
+                sh "npx nx affected --target=build --base=origin/develop~1"
             }
         }
     }
