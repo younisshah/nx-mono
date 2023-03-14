@@ -1,21 +1,19 @@
 pipeline {
-    agent none
+    agent {
+        docker {
+            image 'python3.11-nodejs19'
+        }
+    }
 
     stages {
 
-        stage("prep-python") {
-            agent {
-                docker { image 'python:3.8-slim-buster' }
-            }
+        stage("check-python") {
             steps {
                 sh 'python --version'
             }
         }
 
-        stage("prep-node") {
-            agent {
-                docker { image 'node:16.13.1-alpine' }
-            }
+        stage("install-deps") {
             steps {
                 sh "npm install"
             }
