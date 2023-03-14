@@ -5,4 +5,3 @@ export const multiply = (num: number, multiplier: number = 1) => {
 
 export const double = (num: number) => num * 2;
 
-export const triple = (num: number) => num * 3;
