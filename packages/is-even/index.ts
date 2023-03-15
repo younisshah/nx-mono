@@ -3,7 +3,7 @@ export const isEven = (x: number) => {
     return !(x & 1);
 }
 
-export const FOOBAR = 10;
+export const FOOBAR = 42;
 function printFoobar() {
     console.log(FOOBAR+1);
 }
