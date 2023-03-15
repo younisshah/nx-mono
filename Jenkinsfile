@@ -21,7 +21,8 @@ pipeline {
 
         stage("build") {
             steps {
-                echo "building the application..."
+                echo "Affected packages..."
+                sh "npx nx print-affected --target=build --base=HEAD~1"
                 sh "npx nx affected --target=build --base=HEAD~1 --parallel"
             }
         }
