@@ -22,9 +22,10 @@ pipeline {
         stage("build") {
             steps {
                 echo "diff..."
-                sh "git diff --name-only --no-renames --relative 'HEAD~1' 'HEAD'"
+                sh "git diff --name-only --no-renames --relative '${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}' 'HEAD'"
                 echo "Affected packages..."
-                sh "npx nx print-affected --target=build --base=HEAD~1 --select=projects"
+                sh "npx nx print-affected --target=build --base=${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT} --select=projects"
+
                 sh "npx nx affected --target=build --base=HEAD~1 --parallel"
             }
         }

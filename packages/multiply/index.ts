@@ -9,3 +9,7 @@ export const double = (num: number) => {
     console.log(`Doubling=${num}`);
     return num * TWO;
 }
+
+export const triple = (num: number) => {
+    return num * 3;
+}
