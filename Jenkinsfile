@@ -13,12 +13,6 @@ pipeline {
             }
         }
 
-        stage("install-deps") {
-            steps {
-                sh "npm install"
-            }
-        }
-
         stage("build") {
             steps {
                 echo "diff..."
