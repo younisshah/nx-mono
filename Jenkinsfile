@@ -5,6 +5,10 @@ pipeline {
         }
     }
 
+    environment {
+        PREVIOUS_SUCCESSFUL_COMMIT = env.GIT_PREVIOUS_SUCCESSFUL_COMMIT
+    }
+
     stages {
 
         stage("check-python") {
