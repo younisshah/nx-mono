@@ -4,7 +4,6 @@ export const multiply = (num: number, multiplier: number = 1) => {
 };
 
 const TWO = 2;
-const THREE = 3;
 
 export const double = (num: number) => {
     console.log(`Doubling=${num}`);
@@ -12,5 +11,5 @@ export const double = (num: number) => {
 }
 
 export const triple = (num: number) => {
-    return num * THREE;
+    return num * 3;
 }

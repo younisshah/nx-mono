@@ -19,7 +19,8 @@ pipeline {
                 sh "npx nx print-affected --targets=install:ci,build --base=${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT} --head=HEAD"
 
                 echo "Building..."
-                sh "npx nx affected --targets=install:ci,build --base=${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT} --head=HEAD"
+                sh 'chmod +x build.sh'
+                sh 'sh build.sh'
             }
         }
     }
