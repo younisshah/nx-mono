@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo "Affected packages..."
                 sh 'chmod +x print_affected.sh'
-                sh 'sh print-affected.sh'
+                sh 'sh print_affected.sh'
             }
         }
 
