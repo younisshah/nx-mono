@@ -4,6 +4,7 @@
   "main": "dist/index.js",
   "devDependencies": {},
   "scripts": {
+    "install:ci": "npm install",
     "build": "tsc index.ts --outDir dist"
   }
 }
