@@ -16,7 +16,7 @@ pipeline {
         stage("affected") {
             steps {
                 echo "Affected packages..."
-                sh 'chmod +x print-affected.sh'
+                sh 'chmod +x print_affected.sh'
                 sh 'sh print-affected.sh'
             }
         }
