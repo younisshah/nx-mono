@@ -13,11 +13,16 @@ pipeline {
             }
         }
 
-        stage("build") {
+        stage("affected") {
             steps {
                 echo "Affected packages..."
-                sh "npx nx print-affected --targets=install:ci,build --base=${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT} --head=HEAD"
+                sh 'chmod +x print-affected.sh'
+                sh 'sh print-affected.sh'
+            }
+        }
 
+        stage("build") {
+            steps {
                 echo "Building..."
                 sh 'chmod +x build.sh'
                 sh 'sh build.sh'
